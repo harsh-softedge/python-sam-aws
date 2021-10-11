@@ -30,7 +30,7 @@ Resources:
             Path: /
             Method: any
             RestApiId: !Ref ApiGatewayApi
-  
+ 
   AnotherApiGateway:
     Type: AWS::Serverless::Api
     Properties:
