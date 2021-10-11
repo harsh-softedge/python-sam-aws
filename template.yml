@@ -58,4 +58,4 @@ Resources:
           Properties:
             Path: /
             Method: get
-            RestApiId: !Ref AnotherApiGateway:
+            RestApiId: !Ref AnotherApiGateway
