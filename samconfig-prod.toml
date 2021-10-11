@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "python-prod"
+s3_bucket = "python-prod-gh"
+s3_prefix = "python-prod"
+region = "ap-southeast-1"
+confirm_changeset = false
+capabilities = "CAPABILITY_IAM"
+

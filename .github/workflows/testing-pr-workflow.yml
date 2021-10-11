@@ -1,0 +1,35 @@
+name: Testing (PR)
+
+on:
+ pull_request:
+  branches:
+   - testing
+jobs:
+  tests-testing:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install pip
+      run: |
+        python -m pip install --upgrade pip
+    - name: Install Python Virtual Venv
+      run: pip3 install virtualenv
+
+    - name: Virtual ENV
+      uses: actions/cache@v2
+      id: cache-venv
+      with:
+        path: venv
+        key: ${{ runner.os }}-venv-${{ hashFiles('**/requirements*.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-venv-
+    - name: Activate Virtual ENV
+      run: python -m venv venv && source venv/bin/activate && pip3 install -r requirements.txt
+
+    # - name: Run Pytest 
+    #   run: pytest
