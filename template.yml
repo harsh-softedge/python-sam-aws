@@ -30,8 +30,8 @@ Resources:
             Path: /
             Method: any
             RestApiId: !Ref ApiGatewayApi
-  
- AnotherApiGateway:
+ 
+  AnotherApiGateway:
     Type: AWS::Serverless::Api
     Properties:
       StageName: Prod
