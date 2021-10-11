@@ -37,7 +37,7 @@ jobs:
     #   run: pytest
 
   build-staging:
-    needs: [tests-testing]
+    needs: [tests-staging]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
